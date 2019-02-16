@@ -1,0 +1,105 @@
+<layout>
+
+    <data>
+
+        <variable
+            name="model"
+            type="easyapps.ms.com.config_annotation.ui.viewModel.SharedViewModel" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:visibility="visible"
+            android:layout_height="wrap_content" />
+
+
+        <LinearLayout
+            android:id="@+id/rl_btns_apptimize_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#0055b7"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_use_apptimize_apptimize_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:padding="20dp"
+                android:onClick="@{()->model.onUseAptimizeClicked()}"
+                android:text="@string/reset"
+                android:textColor="@color/white" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/grey" />
+
+            <TextView
+                android:id="@+id/tv_save_settings_apptimize_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="@string/save"
+                android:onClick="@{()->model.onSaveSettingsClicked()}"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/rl_btns_apptimize_info">
+
+            <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/blue_v7"
+                    app:layout_scrollFlags="scroll|enterAlways"
+                    app:title="@string/app_name"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    app:tabGravity="center"
+                    app:tabIndicatorColor="@color/blue_v7"
+                    app:tabIndicatorHeight="2dp"
+                    app:tabMinWidth="120dp"
+                    app:tabMode="scrollable"
+                    app:tabSelectedTextColor="@color/blue_v7"
+                    app:tabTextAppearance="@style/hotelTabStyle"
+                    app:tabTextColor="@color/blue_v7" />
+            </android.support.design.widget.AppBarLayout>
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager_ab"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        </android.support.design.widget.CoordinatorLayout>
+
+    </RelativeLayout>
+
+</layout>

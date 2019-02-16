@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AB Manager</string>
+    <string name="reset">Reset</string>
+    <string name="save"><![CDATA[Save & Exit]]></string>
+</resources>

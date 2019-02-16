@@ -1,0 +1,50 @@
+<layout>
+
+    <data>
+
+        <variable
+            name="itemData"
+            type="easyapps.ms.com.config_annotation.model.AbModel" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/ab_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:checked="@{itemData.switchValue}"
+            android:onCheckedChanged="@{itemData::onCheckChanged}"
+            />
+
+        <TextView
+            android:id="@+id/ab_switch_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/ab_switch"
+            android:layout_alignBottom="@id/ab_switch"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="5dp"
+            android:layout_toStartOf="@id/ab_switch"
+            android:gravity="center_vertical"
+            android:text="@{itemData.fieldName}"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/ab_date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ab_switch_text"
+            android:layout_alignStart="@id/ab_switch_text"
+            android:text="@{itemData.date}"
+            android:textColor="@color/black_0d"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+</layout>

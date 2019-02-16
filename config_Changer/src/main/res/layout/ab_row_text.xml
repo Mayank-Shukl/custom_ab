@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="itemData"
+            type="easyapps.ms.com.config_annotation.model.AbModel" />
+
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/ll_ab_text_element"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingTop="10dp"
+            android:paddingRight="16dp">
+
+            <TextView
+                android:id="@+id/tv_exp_name_ab"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@{itemData.fieldName}"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/et_experiment_value_ab"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@={itemData.value}"
+                android:fontFamily="sans-serif"
+                android:hint="Enter value here"
+                android:inputType="@{itemData.inputType}"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/ab_date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_ab_text_element"
+            android:layout_alignLeft="@id/ab_switch_text"
+            android:layout_marginLeft="16dp"
+            android:text="@{itemData.date}"
+            android:textColor="@color/black_0d"
+            android:textSize="12sp" />
+    </RelativeLayout>
+</layout>
